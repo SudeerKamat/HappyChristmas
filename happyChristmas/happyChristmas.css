@@ -1,0 +1,99 @@
+:host{
+    --slds-c-card-color-background: linear-gradient(#a2000a,#cf0000);
+}
+.slds-card{
+    background: linear-gradient(#a2000a,#cf0000);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 100vh;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: url(https://lh3.googleusercontent.com/u/0/d/1VNnZoEe15-lJIaMSsMFF9CnjidNVdcGS=w271-h257-p-k-nu-iv1);
+    z-index: 1;
+}
+
+.container .circle{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 350px;
+    background: white;
+    border-radius: 50%;
+}
+
+.container .circle::before{
+    content: '';
+    position: absolute;
+    inset: -200px -300px;
+    /* original image Link -https://img.freepik.com/premium-vector/silhouette-santa-claus-riding-reindeer-sleigh_1302-20405.jpg?w=1060 */
+    background: url(https://o.remove.bg/downloads/702d9dde-bc08-4c2a-82e8-438cf0150e02/image-removebg-preview.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 600px;
+    animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0%,100%{
+        transform: translateY(-25px);
+    }
+    50%{
+        transform: translateY(25px);
+    }
+}
+
+.container .circle::after{
+    content: 'Happy Christmas 2022';
+    position: absolute;
+    inset: -125px -200px;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+}
+
+.container .snow{
+    position: relative;
+    display: flex;
+}
+.container .snow span{
+position: relative;
+min-width: 5px;
+height: 5px;
+background: white;
+border-radius: 50%;
+margin: 0 1vw;
+box-shadow: -100px 20px 5px white, 100px 20px 10px white;
+animation:  snowAnimate 15s linear infinite;
+animation-duration: calc(75s/var(--i));
+}
+
+.container .snow span::nth-child(even){
+ min-width: 10px;
+ height: 10px;
+}
+
+@keyframes snowAnimate {
+    0%{
+        transform: translateY(-10vh);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
